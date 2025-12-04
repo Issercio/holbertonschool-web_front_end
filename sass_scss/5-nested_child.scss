@@ -1,0 +1,12 @@
+/* 5-nested_child.scss
+   Set text color inside body and override for .red elements that
+   are direct children of body using nested declarations.
+*/
+
+body {
+  color: #3D3D3D;
+
+  > .red {
+    color: #FF0000;
+  }
+}

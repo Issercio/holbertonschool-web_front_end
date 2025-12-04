@@ -1,0 +1,16 @@
+/* 8-mixin_margins.scss
+   Use a mixin to set left and right margins for body and div.
+*/
+
+@mixin lr-margin($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+body {
+  @include lr-margin(10px);
+}
+
+div {
+  @include lr-margin(15px);
+}

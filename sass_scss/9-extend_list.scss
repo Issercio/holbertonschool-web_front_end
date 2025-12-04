@@ -1,0 +1,17 @@
+/* 9-extend_list.scss
+   Use @extend to share font-size between .info, .success, and .warning classes.
+*/
+
+.info {
+  font-size: 12px;
+}
+
+.success {
+  @extend .info;
+  color: #00FF00;
+}
+
+.warning {
+  @extend .info;
+  color: #FF0000;
+}

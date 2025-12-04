@@ -1,0 +1,15 @@
+/* 7-nested_deeper.scss
+   Set font sizes using nested declarations for body, h1, and h1.smaller.
+*/
+
+body {
+  font-size: 14px;
+
+  h1 {
+    font-size: 16px;
+
+    &.smaller {
+      font-size: 12px;
+    }
+  }
+}

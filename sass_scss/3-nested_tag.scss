@@ -1,0 +1,12 @@
+/* 3-nested_tag.scss
+   Remove margin and padding from body, and give 10px margin to p tags inside body.
+*/
+
+body {
+  margin: 0px;
+  padding: 0px;
+
+  p {
+    margin: 10px;
+  }
+}
