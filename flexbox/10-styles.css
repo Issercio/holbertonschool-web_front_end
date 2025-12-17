@@ -212,6 +212,14 @@ ul.row {
   margin-top: -8.5rem;
 }
 
+/* hero-homepage class for homepage hero background */
+.hero-homepage {
+  background-color: var(--color-dark-grey);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .section-hero .section-body {
   padding: 10rem 4rem;
 }
