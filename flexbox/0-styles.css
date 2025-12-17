@@ -132,11 +132,11 @@ a {
 /* Grid
    ============================= */
 
-ul.row {
+.row {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex; /* ADDED: make children flex items */
+  display: flex;
 }
 
 /* NOTE: Removed the previous .row::after clearfix (not needed with flex)
