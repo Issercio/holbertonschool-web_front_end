@@ -224,8 +224,7 @@ a {
   padding: var(--section-body-padding);
 }
 
-/* Section Latest news
-   ============================= */
+/* Section Latest news ============================= */
 
 .section-latest-news .row {
   flex-direction: row-reverse;
