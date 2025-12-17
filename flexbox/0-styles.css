@@ -224,7 +224,18 @@ a {
   padding: var(--section-body-padding);
 }
 
-/* Some card styles for demo */
+/* Section Latest news
+   ============================= */
+
+.section-latest-news .row {
+  flex-direction: row-reverse;
+}
+
+/*** 4. CARD ***/
+
+/* Card (all styles)
+    ============================= */
+
 .card-services a {
   display: block;
   padding: 2rem;
