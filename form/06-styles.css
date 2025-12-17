@@ -142,7 +142,8 @@ form {
 }
 
 /* Base button styles */
-.button.button-primary {
+.button.button-primary,
+.button-primary {
   display: inline-block;
   padding: 0.6rem 1rem;
   color: var(--color-white);
@@ -154,7 +155,9 @@ form {
 }
 
 .button.button-primary:hover,
-.button.button-primary:focus {
+.button.button-primary:focus,
+.button-primary:hover,
+.button-primary:focus {
   color: var(--color-primary);
   background: var(--color-white);
   transform: translateY(-1px);
