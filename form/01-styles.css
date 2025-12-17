@@ -1,0 +1,63 @@
+/* Base styles for article page */
+
+.section-title {
+  font-size: 1.6rem;
+  margin: 0 0 0.5rem;
+}
+
+.tag-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*** FORM ***/
+/* Comment section
+    ============================= */
+.post-comments {
+  width: 80%;
+  margin: 10rem 0 0 auto;
+  padding-left: 7rem;
+}
+
+.post-comments .section-title {
+  font-variant: small-caps;
+}
+
+/* Basic form
+    ============================= */
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.form-row {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.form-row input,
+.form-row textarea {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: inherit;
+}
+
+.form-row button {
+  align-self: flex-start;
+  padding: 0.6rem 1rem;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
