@@ -316,9 +316,9 @@ position: absolute;
 
 .skip-link {
 
-background: var(–color-black);
+background: var(--color-black);
 
-color: var(–color-white);
+color: var(--color-white);
 
 left: 0;
 
