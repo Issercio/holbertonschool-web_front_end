@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Holberton - Web Stack - Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- First line: 4 equal columns (lg: 4 cols, <lg: 1 col) -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-12 p-2 bg-primary text-white text-center">Primary</div>
+        <div class="col-lg-3 col-12 p-2 bg-success text-white text-center">Success</div>
+        <div class="col-lg-3 col-12 p-2 bg-danger text-white text-center">Danger</div>
+        <div class="col-lg-3 col-12 p-2 bg-warning text-white text-center">Warning</div>
+      </div>
+
+      <!-- Second line: 4 equal columns (sm: 4 cols, <sm: 1 col) -->
+      <div class="row">
+        <div class="col-sm-3 col-12 p-2 bg-primary text-white text-center">Primary</div>
+        <div class="col-sm-3 col-12 p-2 bg-success text-white text-center">Success</div>
+        <div class="col-sm-3 col-12 p-2 bg-danger text-white text-center">Danger</div>
+        <div class="col-sm-3 col-12 p-2 bg-warning text-white text-center">Warning</div>
+      </div>
+
+      <!-- Third line: 3 unequal columns (1:2:3 ratio) (lg: 3 cols, <lg: 1 col) -->
+      <div class="row">
+        <div class="col-lg-2 col-12 p-2 bg-primary text-white text-center">Primary</div>
+        <div class="col-lg-4 col-12 p-2 bg-success text-white text-center">Success</div>
+        <div class="col-lg-6 col-12 p-2 bg-danger text-white text-center">Danger</div>
+      </div>
+
+      <!-- Fourth line: 4 columns with reordering -->
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-3 p-2 bg-primary text-white text-center order-lg-1 order-xl-1 order-md-3 order-sm-2 order-2">Primary</div>
+        <div class="col-12 col-sm-6 col-md-3 p-2 bg-success text-white text-center order-lg-2 order-xl-2 order-md-4 order-sm-3 order-3">Success</div>
+        <div class="col-12 col-sm-6 col-md-3 p-2 bg-danger text-white text-center order-lg-3 order-xl-3 order-md-1 order-sm-4 order-4">Danger</div>
+        <div class="col-12 col-sm-6 col-md-3 p-2 bg-warning text-white text-center order-lg-4 order-xl-4 order-md-2 order-sm-1 order-1">Warning</div>
+      </div>
+
+      <!-- Fifth line: 2 columns (md: 2 cols in row, <md: 1 col) -->
+      <div class="row">
+        <div class="col-md-6 col-12 p-2 bg-primary text-white text-center">Primary</div>
+        <div class="col-md-6 col-12 p-2 bg-success text-white text-center">Success</div>
+      </div>
+
+      <!-- Last line: 3 columns with spacing (md: 3 cols with 2:1 gap ratio, <md: 1 col) -->
+      <div class="row">
+        <div class="col-md-2 col-12 p-2 bg-primary text-white text-center">Primary</div>
+        <div class="col-md-4 col-12 p-2 bg-success text-white text-center">Success</div>
+        <div class="col-md-2 col-12 p-2 bg-danger text-white text-center">Danger</div>
+      </div>
+    </div>
+  </body>
+</html>
