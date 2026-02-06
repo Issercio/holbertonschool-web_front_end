@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 9</title>
+        <style>
+            .loading {
+                opacity: 0.2;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script type="application/javascript">
+            let currentSearch = '';
+
+            function createSearchForm() {
+                const textInput = $('<input>').attr('type', 'text');
+                const submitInput = $('<input>').attr('type', 'submit').val('Submit');
+                const resultsList = $('<ul>');
+                const paginationList = $('<ul>').attr('id', 'pagination');
+
+                $('body').append(textInput, submitInput, resultsList, paginationList);
+
+                submitInput.click((event) => {
+                    event.preventDefault();
+                    currentSearch = textInput.val();
+                    queryWikipedia(currentSearch, 0);
+                });
+            }
+
+            function addNewArticle(id, title, snippet) {
+                const listItem = $('<li>');
+                const titleParagraph = $('<p>').append(
+                    $('<span>').text(`${id} - `),
+                    $('<b>').text(title)
+                );
+                const snippetParagraph = $('<p>').html(snippet);
+
+                listItem.append(titleParagraph, snippetParagraph);
+                $('ul').first().append(listItem);
+            }
+
+            function buildPagination(numberOfItems, itemsPerPage, currentOffset) {
+                const totalPages = Math.ceil(numberOfItems / itemsPerPage);
+                const pagination = $('#pagination');
+                pagination.empty();
+
+                for (let page = 1; page <= totalPages; page += 1) {
+                    const offset = (page - 1) * itemsPerPage;
+                    const pageItem = $('<li>').text(page);
+
+                    pageItem.css({
+                        cursor: 'pointer',
+                        'margin-left': '10px',
+                        display: 'inline',
+                        'font-weight': offset === currentOffset ? 'bold' : 'normal',
+                    });
+
+                    pageItem.click(() => {
+                        queryWikipedia(currentSearch, offset);
+                    });
+
+                    pagination.append(pageItem);
+                }
+            }
+
+            function displayLoading(loading) {
+                const resultsList = $('ul').first();
+                if (loading) {
+                    if (!resultsList.parent().hasClass('loading')) {
+                        resultsList.wrap('<div class="loading"></div>');
+                    }
+                } else if (resultsList.parent().hasClass('loading')) {
+                    resultsList.unwrap();
+                }
+            }
+
+            function queryWikipedia(search, offset = 0) {
+                const data = {
+                    action: 'query',
+                    list: 'search',
+                    srsearch: search,
+                    sroffset: offset,
+                    format: 'json',
+                    origin: '*',
+                };
+
+                displayLoading(true);
+
+                $.ajax({
+                    url: 'https://en.wikipedia.org/w/api.php',
+                    data,
+                    success(response) {
+                        const results = response.query.search;
+                        const totalHits = response.query.searchinfo.totalhits;
+
+                        $('ul').first().empty();
+                        results.forEach((result) => {
+                            addNewArticle(result.pageid, result.title, result.snippet);
+                        });
+
+                        buildPagination(totalHits, 10, offset);
+                        displayLoading(false);
+                    },
+                });
+            }
+
+            $(document).ready(() => {
+                createSearchForm();
+            });
+        </script>
+
+    </body>
+
+</html>
